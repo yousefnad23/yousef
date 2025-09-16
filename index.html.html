@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قصة الإمام البخاري - رحلة عالم الحديث</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c5e2e;
+            --secondary-color: #6a915c;
+            --accent-color: #b38728;
+            --light-color: #f8f4e6;
+            --dark-color: #1e2f23;
+            --bg-color: #f8f4e6;
+            --text-color: #2c3e50;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --header-bg: rgba(255, 255, 255, 0.9);
+            --footer-bg: linear-gradient(135deg, var(--dark-color), #2a3b2e);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: var(--text-color);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background: url('https://mshmsdin.com/wp-content/uploads/2024/06/%D8%B5%D9%88%D8%B1%D8%A9-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D9%85-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D9%85-%D8%A7%D9%84%D8%A8%D8%AE%D8%A7%D8%B1%D9%8A.webp') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(248, 244, 230, 0.92);
+            z-index: -1;
+            transition: background 0.3s ease;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(44, 94, 46, 0.9) 0%, rgba(106, 145, 92, 0.85) 100%);
+            z-index: -1;
+            transition: background 0.3s ease;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: var(--header-bg);
+            color: var(--primary-color);
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+            margin: 2rem auto;
+            max-width: 900px;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232c5e2e' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 0;
+            transition: background 0.3s ease;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-family: 'Scheherazade New', serif;
+            font-size: 3.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            transition: color 0.3s ease;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            color: var(--secondary-color);
+            transition: color 0.3s ease;
+        }
+        
+        .intro {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+        
+        .content-section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 2rem auto;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .chapters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 2rem 0;
+        }
+        
+        .chapter {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .chapter:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px;
+            text-align: center;
+            transition: background 0.3s ease;
+            position: relative;
+        }
+        
+        .chapter-number {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+            color: var(--accent-color);
+            transition: color 0.3s ease;
+        }
+        
+        .chapter-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-family: 'Scheherazade New', serif;
+        }
+        
+        .chapter-toggle {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .chapter-toggle i {
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .chapter.active .chapter-toggle i {
+            transform: rotate(180deg);
+        }
+        
+        .chapter-content {
+            padding: 20px;
+            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+        }
+        
+        .chapter.active .chapter-content {
+            display: block;
+            max-height: 1000px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .chapter-text {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+        
+        .chapter-highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .quote {
+            font-style: italic;
+            margin: 2.5rem auto;
+            padding: 1.8rem;
+            border-right: 4px solid var(--accent-color);
+            background: linear-gradient(to right, rgba(179, 135, 40, 0.1), rgba(179, 135, 40, 0.05));
+            max-width: 800px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            color: var(--text-color);
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .quote::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            margin-top: -1.5rem;
+            margin-right: -1rem;
+            color: rgba(179, 135, 40, 0.3);
+            font-family: serif;
+            transition: color 0.3s ease;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem 0;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: var(--transition);
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 40px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 40px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            border-top: 4px solid var(--primary-color);
+            transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+        
+        .timeline-date i {
+            color: var(--accent-color);
+            transition: color 0.3s ease;
+        }
+        
+        /* التواصل الاجتماعي */
+        .social-section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem auto;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            text-align: center;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .social-title {
+            font-family: 'Scheherazade New', serif;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+        
+        .facebook {
+            background: linear-gradient(135deg, #3b5998, #1877F2);
+        }
+        
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 4rem;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            transition: background 0.3s ease;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+           100% { transform: translateY(0px); }
+        }
+        
+        .floating-icon {
+            position: fixed;
+            font-size: 2rem;
+            color: var(--accent-color);
+            opacity: 0.2;
+            animation: float 5s ease-in-out infinite;
+            z-index: -1;
+            transition: color 0.3s ease;
+        }
+        
+        .icon-1 { top: 20%; left: 10%; animation-delay: 0s; }
+        .icon-2 { top: 60%; right: 15%; animation-delay: 1s; }
+        .icon-3 { bottom: 20%; left: 20%; animation-delay: 2s; }
+        .icon-4 { top: 30%; right: 25%; animation-delay: 3s; }
+        
+        @media screen and (max-width: 992px) {
+            h1 {
+                font-size: 2.7rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                left: 0;
+                padding-right: 0;
+                padding-left: 70px;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .chapters {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .social-icons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .floating-icon {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    
+    <div class="floating-icon icon-1"><i class="fas fa-book"></i></div>
+    <div class="floating-icon icon-2"><i class="fas fa-mosque"></i></div>
+    <div class="floating-icon icon-3"><i class="fas fa-pen-nib"></i></div>
+    <div class="floating-icon icon-4"><i class="fas fa-star"></i></div>
+
+    <div class="container">
+        <header>
+            <div class="header-pattern"></div>
+            <div class="header-content">
+                <h1>الإمام البخاري</h1>
+                <div class="subtitle">رحلة عالم الحديث من الطفولة إلى الخلود</div>
+                <div class="intro">
+                    قصة الإمام البخاري، ذلك العالم الجليل الذي وهب حياته لخدمة السنة النبوية، فجمع أصح كتاب بعد كتاب الله تعالى. تعرف على رحلته المذهلة من طفولته وحتى أصبح إمام المحدثين.
+                </div>
+            </div>
+        </header>
+
+        <div class="content-section">
+            <div class="chapters">
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div class="chapter-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="chapter-number">الفصل الأول</div>
+                        <h2 class="chapter-title">النشأة والطفولة</h2>
+                    </div>
+                    <div class="chapter-content">
+                        <p class="chapter-text">
+                            وُلِد الإمام البخاري في مدينة <span class="chapter-highlight">بخارى</span> عام 194 هـ، وكان والده من العلماء الصالحين. فقد بصره في صغره، فدعت له أمه بدعاء خالص فرُدَّ بصره ببركة دعائها. ظهر نبوغه منذ الصغر، حيث حفظ القرآن الكريم وهو صغير وأقبل على طلب العلم بشغف كبير.
+                        </p>
+                        <p class="chapter-text">
+                            كان البخاري يتمتع بذاكرة قوية فائقة، ففي سن العاشرة كان قد حفظ آلاف الأحاديث وأتقنها. بدأ رحلته في طلب العلم وهو لا يزال فتى صغيراً، يتردد على حلقات العلم في مسقط رأسه بخارى.
+                        </p>
+                        <p class="chapter-text">
+                            يقول البخاري عن نفسه: "ألهمت حفظ الحديث وأنا في الكتّاب، فكنت أحفظ وأنا صبي في كل يوم سبع آيات أو أكثر".
+                        </p>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div class="chapter-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="chapter-number">الفصل الثاني</div>
+                        <h2 class="chapter-title">رحلة طلب العلم</h2>
+                    </div>
+                    <div class="chapter-content">
+                        <p class="chapter-text">
+                            بدأ البخاري رحلته في طلب العلم وهو في سن السادسة عشرة، حيث رحل مع أمه وأخيه إلى الحجاز لأداء فريضة الحج. ثم استقر في <span class="chapter-highlight">مكة المكرمة</span> ليتلقى العلم من شيوخها، ثم انتقل إلى المدينة المنورة وغيرها من حواضر العلم في العالم الإسلامي.
+                        </p>
+                        <p class="chapter-text">
+                            سمع البخاري من أكثر من ألف شيخ، وطاف البلاد من خراسان إلى العراق، ومصر إلى الشام، يجمع الأحاديث ويدونها ويحفظها. كان يميز بين الأحاديث الصحيحة والضعيفة بفطنة نادرة وذكاء حاد.
+                        </p>
+                        <p class="chapter-text">
+                            قال أحد معاصريه: "كان البخاري إذا دخل البلد أنصت للأحاديث وكأنه لم يسمعها من قبل، مع أنه قد سمعها مرارًا".
+                        </p>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div class="chapter-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="chapter-number">الفصل الثالث</div>
+                        <h2 class="chapter-title">تصنيف الصحيح</h2>
+                    </div>
+                    <div class="chapter-content">
+                        <p class="chapter-text">
+                            اشتهر البخاري بتصنيفه لأصح كتاب بعد كتاب الله تعالى وهو <span class="chapter-highlight">"الجامع المسند الصحيح المختصر من أمور رسول الله صلى الله عليه وسلم وسننه وأيامه"</span>، المعروف بـ "صحيح البخاري". استغرق في تأليفه ستة عشر عاماً، انتقى فيه الأحاديث من بين ستمائة ألف حديث كان يحفظها.
+                        </p>
+                        <p class="chapter-text">
+                            كان البخاري لا يضع حديثاً في كتابه إلا بعد أن يغتسل ويصلي ركعتين استخارة لله تعالى. يروى أنه كان في مسيرة تأليف الكتاب يختبر صحة الأحاديث بأحوال الطقس والأمور الغيبية تأكيداً على دقة نقله.
+                        </p>
+                        <p class="chapter-text">
+                            قال البخاري: "ما وضعت في كتابي الصحيح حديثاً إلا اغتسلت قبل ذلك وصليت ركعتين".
+                        </p>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div class="chapter-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="chapter-number">الفصل الرابع</div>
+                        <h2 class="chapter-title">الامتحان والوفاة</h2>
+                    </div>
+                    <div class="chapter-content">
+                        <p class="chapter-text">
+                            تعرض البخاري للامتحان والابتلاء كما تعرض الكثير من العلماء، حيث حُوكم في بعض المسائل العقدية، فصبر واحتسب وانتقل من بلد إلى بلد، حتى استقر في إحدى قرى <span class="chapter-highlight">سمرقند</span>. وفي ليلة من ليالي شهر رمضان المبارك سنة 256 هـ، توفي الإمام البخاري عن عمر يناهز 62 عاماً.
+                        </p>
+                        <p class="chapter-text">
+                            رحل البخاري جسداً لكن علمه بقي خالداً، حيث لا يزال صحيحه مرجعاً أساسياً للأمة الإسلامية، وشاهداً على عظمة هذا الإمام وعطائه الذي لا ينضب.
+                        </p>
+                        <p class="chapter-text">
+                            قال الإمام الذهبي: " البخاري أشهر من أن يُعرِّف، فهو أمير المؤمنين في الحديث، وأعظم أهل الدنيا في حفظ الحديث وإتقانه".
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote">
+                "قال البخاري: ما وضعت في كتابي الصحيح حديثاً إلا اغتسلت قبل ذلك وصليت ركعتين"
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-calendar-day"></i> 194 هـ</div>
+                        <p>ولادة الإمام البخاري في بخارى</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-book-open"></i> 210 ه�</div>
+                        <p>بداية رحلته في طلب العلم وحفظ الحديث</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-pen-fancy"></i> 216 هـ</div>
+                        <p>بداية تأليف صحيح البخاري</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-book"></i> 232 هـ</div>
+                        <p>انتهاء من تأليف الصحيح بعد 16 عاماً من العمل</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-star-and-crescent"></i> 256 هـ</div>
+                        <p>وفاة الإمام البخاري في سمرقند</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم التواصل الاجتماعي الجديد -->
+        <div class="social-section">
+            <h2 class="social-title">تواصل معي</h2>
+            <p>يمكنك التواصل معي عبر وسائل التواصل الاجتماعي التالية:</p>
+            <div class="social-icons">
+                <a href="https://wa.me/201156116972" target="_blank" class="social-icon whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1En5ESebgX/" target="_blank" class="social-icon facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>قصة الإمام البخاري - موقع تفاعلي لسيرة إمام المحدثين</p>
+                <p>يوسف نده</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chapters = document.querySelectorAll('.chapter');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            // فتح وإغلاق الفصول
+            chapters.forEach((chapter, index) => {
+                const header = chapter.querySelector('.chapter-header');
+                const toggle = chapter.querySelector('.chapter-toggle i');
+                
+                header.addEventListener('click', function() {
+                    // إغلاق جميع الفصول الأخرى
+                    chapters.forEach((ch, i) => {
+                        if (ch !== chapter) {
+                            ch.classList.remove('active');
+                            ch.querySelector('.chapter-toggle i').className = 'fas fa-chevron-down';
+                        }
+                    });
+                    
+                    // فتح أو إغلاق الفصل الحالي
+                    chapter.classList.toggle('active');
+                    
+                    // تحديث أيقونة التبديل
+                    if (chapter.classList.contains('active')) {
+                        toggle.className = 'fas fa-chevron-up';
+                    } else {
+                        toggle.className = 'fas fa-chevron-down';
+                    }
+                });
+            });
+            
+            // تأثير التمرير للخط الزمني
+            function checkTimeline() {
+                timelineItems.forEach(item => {
+                    const position = item.getBoundingClientRect();
+                    if (position.top < window.innerHeight - 100) {
+                        item.classList.add('visible');
+                    }
+                });
+            }
+            
+            // أحداث التمرير
+            window.addEventListener('scroll', function() {
+                checkTimeline();
+            });
+            
+            // التهيئة الأولية
+            checkTimeline();
+            
+            // إضافة تأثيرات عند تحميل الصفحة
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 500);
+        });
+    </script>
+</body>
+</html>
